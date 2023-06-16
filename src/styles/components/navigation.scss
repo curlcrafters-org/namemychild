@@ -23,3 +23,24 @@
     }
   }
 }
+
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 20px 0;
+    .grid-container {
+      .col-1{
+        width: 100%;
+        h1{
+          width: 100%;
+          text-align: center
+        }
+      }
+      .col-2 {
+        display: none;
+      }
+    }
+  }
+
+}
+

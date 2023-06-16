@@ -1,9 +1,10 @@
 :root {
-  --primary: #774f9c;
+  //--primary: #774f9c;
   --bg: #ffc0b9;
-  --pink: #fdb3ac;
-  --white: #fdfaf4;
-  --black: #404258;
+  --pink: #FFA9D0;
+  --white: #ffffff;
+  --black: #121212;
+  --primary: #FBE0DC;
 }
 
 * {
@@ -23,4 +24,10 @@
   font-family: 'Nunito', sans-serif;
   font-weight: $fontWeight;
   font-size: $fontSize;
+}
+
+
+button{
+  background: var(--black)  !important;
+  color: var(--white) !important;
 }

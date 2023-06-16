@@ -18,9 +18,11 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
   });
 
   const [result, setResult] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
   const getNames = async () => {
     try {
+      setLoading(true)
       const data: any = await searchNames({ ...nameBody });
       console.log('data', data);
       if (data && data.statusCode === 200) {
@@ -33,13 +35,16 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
           else setResult([...temp]);
           console.log({ names: [...temp] }, data.body.names);
         } else alert('something went wrong');
+        setLoading(false)
       }
     } catch (error) {
+      setLoading(false)
       console.log(error);
     }
   };
 
   const updatePrompts = (key: string, event: any) => {
+    setResult(null);
     const val = event?.target.innerHTML;
     console.log('event', val, nameBody, key);
     const temp = { ...nameBody };
@@ -63,6 +68,9 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
         updatePrompts,
         getNames,
         result,
+        setResult,
+        loading,
+        setLoading
       }}
     >
       {children}

@@ -41,6 +41,7 @@ const Navigation = () => {
           item
           lg={3}
           md={3}
+          sm={12}
           className='col-1'
         >
           <h1>Name my child</h1>
@@ -73,9 +74,7 @@ const Navigation = () => {
                   anchorEl={anchorEl}
                   open={open}
                   onClose={handleClose}
-                  MenuListProps={{
-                    'aria-labelledby': 'basic-button',
-                  }}
+
                 >
                   <MenuItem onClick={handleClose}>Popular Names</MenuItem>
                   <MenuItem onClick={handleClose}>Modern Unisex Names</MenuItem>
